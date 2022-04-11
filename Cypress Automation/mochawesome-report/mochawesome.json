@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-08T06:59:08.153Z",
+    "end": "2022-04-08T06:59:20.948Z",
+    "duration": 12795,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ba60753e-c8e9-4d0c-936a-273cebabac4f",
+      "title": "",
+      "fullFile": "cypress/integration/examples/webTables.js",
+      "file": "cypress/integration/examples/webTables.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3ca2e16d-4fb8-476d-9c0c-dd6b85d1cb4d",
+          "title": "My webTables Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "My FirstTestCase",
+              "fullTitle": "My webTables Suite My FirstTestCase",
+              "timedOut": null,
+              "duration": 10325,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(Cypress.env('url') + '/AutomationPractice/'); //iterate through the table , css selector to read just the middle column and iterate through each item in the second column\ncy.get('tr td:nth-child(2)').each(($e1, index, $list) => {\n  var text = $e1.text();\n  if (text.includes('Python')) {\n    //move to the sibling column with the price and assert if it is what i expect\n    cy.get('tr td:nth-child(2)').eq(index).next().then(function (price) {\n      //can't extract the price with text() cos this is a jQuerry obj and the promise will not be resolved\n      const priceText = price.text();\n      expect(priceText).to.equal('25');\n    });\n  }\n});",
+              "err": {},
+              "uuid": "1784af28-a594-4143-9732-bbfa38414b96",
+              "parentUUID": "3ca2e16d-4fb8-476d-9c0c-dd6b85d1cb4d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1784af28-a594-4143-9732-bbfa38414b96"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10325,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
