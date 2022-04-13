@@ -57,7 +57,7 @@ homePage.getShopTab().click()  // navigate to the shop page
 
 //get products (productName) from json fixtures array
 
-this.data.productName.forEach(function(element)  { //add products to your cart , the products are from an array in 
+this.data.productName.forEach(function(element)  { //add products to your cart , the products are from an array in example.json
     
     cy.selectProduct(element)  //this is a custom method located in support/commands.js
 
